@@ -1,0 +1,12 @@
+apiVersion kustomize.toolkit.fluxcd.iov1
+kind Kustomization
+metadata
+  name apps
+  namespace flux-system
+spec
+  interval 5m
+  path .appspodinfo
+  sourceRef
+    kind GitRepository
+    name apps-repo
+  prune true
